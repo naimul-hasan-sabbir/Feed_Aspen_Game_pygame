@@ -33,6 +33,14 @@ while running:
         player_pos.x -= 300 * dt
     if keys[pygame.K_RIGHT]:
         player_pos.x += 300 * dt
+        
+    #use the mouse
+    if event.type == pygame.MOUSEMOTION:
+        pos = pygame.mouse.get_pos()
+        
+        player_pos.x = pos[0]
+        player_pos.y = pos[1]
+        
     
     #flip the display
     pygame.display.flip()
