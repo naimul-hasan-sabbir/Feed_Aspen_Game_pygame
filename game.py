@@ -35,12 +35,18 @@ while running:
         player_pos.x += 300 * dt
         
     #use the mouse
-    if event.type == pygame.MOUSEMOTION:
-        pos = pygame.mouse.get_pos()
+    #if event.type == pygame.MOUSEMOTION:
+    #    pos = pygame.mouse.get_pos()
         
-        player_pos.x = pos[0]
-        player_pos.y = pos[1]
-        
+    #    player_pos.x = pos[0]
+    #    player_pos.y = pos[1]
+     
+    if pygame.mouse.get_pressed()[0]:
+        if event.type == pygame.MOUSEMOTION:
+            pos = pygame.mouse.get_pos()
+            
+            player_pos.x = pos[0]
+            player_pos.y = pos[1]   
     
     #flip the display
     pygame.display.flip()
